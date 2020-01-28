@@ -19,8 +19,15 @@ function add(data) {
     });
 }
 
-module.exports = {
-    findById,
-    find,
-    add
+function findBy(filter) {
+  return db("users")
+    .where(filter)
+    .first();
 }
+
+module.exports = {
+  findById,
+  find,
+  add,
+  findBy
+};
